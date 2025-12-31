@@ -17,7 +17,12 @@ app.add_middleware(
     CORSMiddleware,
     # allow_origins=["http://localhost:3000",
     #     "https://health-fitness-tracker-frontend.vercel.app"],
-    allow_origins=["http://localhost:3000"],
+    
+    allow_origins=[
+        "http://localhost:3000",  # Local development
+        "https://health-fitness-tracker-main-fronten.vercel.app",  # Your Vercel frontend
+        "https://healthfitnesstrackermain-backend.onrender.com",  # Backend itself (optional)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
