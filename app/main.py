@@ -20,8 +20,7 @@ app.add_middleware(
     
     allow_origins=[
         "http://localhost:3000",  # Local development
-        "https://health-fitness-tracker-main-fronten.vercel.app",  # Your Vercel frontend
-        "https://healthfitnesstrackermain-backend.onrender.com",  # Backend itself (optional)
+        "https://health-fitness-tracker-main-frontend-3lgzu5ozt.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
