@@ -13,15 +13,23 @@ app = FastAPI(
 )
 
 # CORS configuration
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "http://localhost:3000",  # Local development
+#         "https://health-fitness-tracker-main-fronten.vercel.app"
+#     ],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=["http://localhost:3000",
-    #     "https://health-fitness-tracker-frontend.vercel.app"],
-    
     allow_origins=[
-        "http://localhost:3000",  # Local development
-        "https://health-fitness-tracker-main-frontend-3lgzu5ozt.vercel.app"
+        "http://localhost:3000",
+        "https://health-fitness-tracker-main-fronten.vercel.app",  # Production
     ],
+    allow_origin_regex=r"https://health-fitness-tracker-main-.*\.vercel\.app",  # All previews
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
